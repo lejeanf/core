@@ -37,8 +37,8 @@ namespace jeanf.core
         public InputAction nextPhase;
         public InputAction previousPhase;
 
-        //public delegate void BroadcastSceneName(string sceneName);
-        //public static event BroadcastSceneName broadcastSceneName;
+        public delegate void TeleportEvent(string sceneName);
+        public static event TeleportEvent teleport;
         private void Awake()
         {
             Subsribe();
@@ -78,13 +78,13 @@ namespace jeanf.core
 
         void LoadPhase(int phaseId)
         {
-            //Debug.Log($"listOfPhases.Count: {listOfPhases.Count}, phaseId: {phaseId}");
             Phase phase = listOfPhases[phaseId];
             currentPhase = phase;
             currentId = phase.id;
             cameraManager.currentScene = phase.sceneToLoad;
-            //broadcastSceneName?.Invoke(phase.sceneToLoad);
+
             StartCoroutine(sceneLoader.LoadScene(phase.sceneToLoad, listOfPhases.Count, transitionManager));
+            teleport?.Invoke(phase.sceneToLoad);
         }
 
         public void Next()
@@ -93,7 +93,7 @@ namespace jeanf.core
             int currentIndex =+ currentId;
             if (currentIndex >= listOfPhases.Count) currentIndex = 0;
             LoadPhase(currentIndex);
-            Debug.Log($"next: phase  = {currentIndex}");
+            //Debug.Log($"next: phase  = {currentIndex}");
         }
 
         public void Previous() 
@@ -101,7 +101,7 @@ namespace jeanf.core
             if (listOfPhases.Count == 0) return;
             int currentIndex = (currentId + 1) % listOfPhases.Count;
             LoadPhase(currentIndex);
-            Debug.Log($"previous: phase = {currentIndex}");
+            //Debug.Log($"previous: phase = {currentIndex}");
         }
     }
 }
