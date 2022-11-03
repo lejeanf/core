@@ -26,6 +26,7 @@ namespace jeanf.core
             }
         }
         Phase currentPhase;
+        int currentId;
 
         public SceneLoader sceneLoader;
         public TransitionManager transitionManager;
@@ -69,9 +70,28 @@ namespace jeanf.core
             Debug.Log($"listOfPhases.Count: {listOfPhases.Count}, phaseId: {phaseId}");
             Phase phase = listOfPhases[phaseId];
             currentPhase = phase;
+            currentId = phase.id;
             cameraManager.currentScene = phase.sceneToLoad;
             //broadcastSceneName?.Invoke(phase.sceneToLoad);
             StartCoroutine(sceneLoader.LoadScene(phase.sceneToLoad, listOfPhases.Count, transitionManager));
+        }
+
+        public void Next()
+        {
+            if (listOfPhases.Count == 0) return;
+            int index = currentId;
+            LoadPhase((index + 1) % listOfPhases.Count);
+            Debug.Log($"currentIndex = {index}");
+        }
+
+        public void Previous() 
+        {
+            if (listOfPhases.Count == 0) return;
+            int index = currentId;
+            int currentIndex = (index - 1) % listOfPhases.Count;
+            if (currentIndex < 0) currentIndex = listOfPhases.Count - 1;
+            LoadPhase(currentIndex);
+            Debug.Log($"currentIndex = {currentIndex}");
         }
     }
 }
