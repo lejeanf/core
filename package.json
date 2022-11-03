@@ -4,11 +4,6 @@
   "displayName":"Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "unity": "2020.3",
-  "depedencies": {
-    "com.unity.cinemachine": "2.0.0",
-    "com.unity.inputsystem": "1.0.0",
-    "com.unity.timeline": "1.0.0"
-  },
   "keywords": [
     "core",
     "jeanf",
@@ -18,5 +13,10 @@
     "name":"Jean-François Robin",
     "email":"robin.jeanfrancois@gmail.com",
     "url":"https://jeanfrancoisrobin.art"
+  },
+  "depedencies": {
+    "com.unity.cinemachine": "2.0.0",
+    "com.unity.inputsystem": "1.0.0",
+    "com.unity.timeline": "1.0.0"
   }
 }
