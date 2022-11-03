@@ -34,6 +34,9 @@ namespace jeanf.core
 
         [SerializeField] public List<Phase> listOfPhases = new List<Phase>();
 
+        public InputAction nextPhase;
+        public InputAction previousPhase;
+
         //public delegate void BroadcastSceneName(string sceneName);
         //public static event BroadcastSceneName broadcastSceneName;
         private void Awake()
@@ -53,6 +56,10 @@ namespace jeanf.core
                 i.inputAction.Enable();
                 i.inputAction.performed += ctx => LoadPhase(i.id);
             }
+            nextPhase.Enable();
+            previousPhase.Enable();
+            nextPhase.performed += ctx => Next();
+            previousPhase.performed += ctx => Previous();
         }
         private void OnDisable() => Unsubscribe();
         private void OnDestroy() => Unsubscribe();
@@ -63,6 +70,10 @@ namespace jeanf.core
                 i.inputAction.performed -= ctx => LoadPhase(i.id);
                 i.inputAction.Disable();
             }
+            nextPhase.performed -= ctx => Next();
+            previousPhase.performed -= ctx => Previous();
+            nextPhase.Disable();
+            previousPhase.Disable();
         }
 
         void LoadPhase(int phaseId)
