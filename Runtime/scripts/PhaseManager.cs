@@ -90,19 +90,18 @@ namespace jeanf.core
         public void Next()
         {
             if (listOfPhases.Count == 0) return;
-            int index = currentId;
-            LoadPhase((index + 1) % listOfPhases.Count);
-            Debug.Log($"phase = {index}");
+            int currentIndex =+ currentId;
+            if (currentIndex >= listOfPhases.Count) currentIndex = 0;
+            LoadPhase(currentIndex);
+            Debug.Log($"next: phase  = {currentIndex}");
         }
 
         public void Previous() 
         {
             if (listOfPhases.Count == 0) return;
-            int index = currentId;
-            int currentIndex = (index - 1) % listOfPhases.Count;
-            if (currentIndex < 0) currentIndex = listOfPhases.Count - 1;
+            int currentIndex = (currentId + 1) % listOfPhases.Count;
             LoadPhase(currentIndex);
-            Debug.Log($"phase = {currentIndex}");
+            Debug.Log($"previous: phase = {currentIndex}");
         }
     }
 }

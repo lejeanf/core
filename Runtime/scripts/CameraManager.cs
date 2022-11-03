@@ -51,7 +51,7 @@ namespace jeanf.core{
 
         private void Init(string sceneName)
         {
-            Debug.Log($"Init scene: {sceneName}");
+            //Debug.Log($"Init scene: {sceneName}");
             MoveToCam(0);
         }
 

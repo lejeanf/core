@@ -884,6 +884,76 @@ PrefabInstance:
       propertyPath: playableDirector
       value: 
       objectReference: {fileID: 1995961184}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 301b3584-0133-4383-a07d-64cc4c36e472
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 89e3684c-36c8-439a-a461-0045205124ae
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 6a55e059-455b-4f39-b204-71b762a59f2b
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <XRController>/primaryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <XRController>/secondaryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: nextPhase.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Next Phase
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.data[1].m_Id
+      value: eaa50578-18c0-4978-b43d-a77a7c22f1a4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 2024369c-374b-4632-a12e-57cb67db2952
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <XRController>/secondaryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.data[2].m_Path
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404883289483565093, guid: 2c9fd5634d457c649ade923b56c736ab,
+        type: 3}
+      propertyPath: previousPhase.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Previous Phase
+      objectReference: {fileID: 0}
     - target: {fileID: 3404883289963149490, guid: 2c9fd5634d457c649ade923b56c736ab,
         type: 3}
       propertyPath: m_Name
