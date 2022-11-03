@@ -1,0 +1,11 @@
+{
+  "name":"art.jeanfrancoisrobin.unitypackage",
+  "version":"1.0.0",
+  "displayName":"VJ-Toolkit Core",
+  "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
+  "author":{
+    "Jean-François Robin",
+    "email":"robin.jeanfrancois@gmail.com",
+    "url":"https://jeanafrancoisrobin.art",
+    }
+}
