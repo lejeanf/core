@@ -238,89 +238,138 @@ MonoBehaviour:
   transitionManager: {fileID: 3404883289767885665}
   cameraManager: {fileID: 3404883288960054187}
   listOfPhases:
-  - sceneToLoad: Intro
-    transitionTime: 0
-  - sceneToLoad: Phase1
+  - sceneToLoad: Scene1
+    id: 1
     transitionTime: 3
-  - sceneToLoad: Phase2
+    inputAction:
+      m_Name: Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a0531fbf-d407-45f4-bced-7973b5d3ac98
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: d6a2e1cf-eadd-4451-8495-b68f348e4236
+        m_Path: <Keyboard>/1
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      - m_Name: 
+        m_Id: d6df24c3-2ade-4d59-a91c-9873af452cc3
+        m_Path: <Keyboard>/numpad1
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      m_Flags: 0
+  - sceneToLoad: Scene2
+    id: 2
     transitionTime: 3
-  - sceneToLoad: Phase3
+    inputAction:
+      m_Name: Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 628cd73c-097c-494c-908c-416fd25c5ab8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: b29d684c-a266-4962-8c65-0425c6137c55
+        m_Path: <Keyboard>/2
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 394e71e5-59b5-49cc-862e-bfdd61973625
+        m_Path: <Keyboard>/numpad2
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      m_Flags: 0
+  - sceneToLoad: Scene3
+    id: 3
     transitionTime: 3
-  - sceneToLoad: Credits
-    transitionTime: 0
-  loadPhase1:
-    m_Name: Load Phase 1
+    inputAction:
+      m_Name: Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7668ed94-c13c-41df-bdca-e2a63acc6aa8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 208c8d0b-892a-428b-8e2f-53ba073295d9
+        m_Path: <Keyboard>/3
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 1595ec4b-fd55-49ec-9d2c-90dcf208f226
+        m_Path: <Keyboard>/numpad3
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Input
+        m_Flags: 0
+      m_Flags: 0
+  nextPhase:
+    m_Name: Next Phase
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: f1939788-b19f-44aa-9b7a-264dd524fca9
+    m_Id: 3ecd9967-ce09-4965-a0ca-7598dac5d327
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 358034fb-968c-4442-8620-34d01b09a791
-      m_Path: <Keyboard>/numpad1
+      m_Id: 301b3584-0133-4383-a07d-64cc4c36e472
+      m_Path: <Keyboard>/n
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Load Phase 1
+      m_Action: Next Phase
       m_Flags: 0
     - m_Name: 
-      m_Id: bfc74f4f-cb34-485d-b987-ba1fba244346
-      m_Path: <Keyboard>/1
+      m_Id: b1c2cbd4-612d-4116-a322-55b3f1187110
+      m_Path: <XRController>/primaryButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Load Phase 1
+      m_Action: Next Phase
       m_Flags: 0
     m_Flags: 0
-  loadPhase2:
-    m_Name: Load Phase 2
+  previousPhase:
+    m_Name: Previous Phase
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 16245084-a89c-4d71-bbfa-561a11fe9d07
+    m_Id: 3815d27d-5981-4310-a592-4b3f7ba66ae2
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 322d8ebf-45a8-4cc5-b750-839824692e79
-      m_Path: <Keyboard>/numpad2
+      m_Id: 81632ec6-638c-4e94-991d-772029a3ba58
+      m_Path: <Keyboard>/b
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Load Phase 2
+      m_Action: Previous Phase
       m_Flags: 0
     - m_Name: 
-      m_Id: a2d69ec9-83f2-499b-a2c2-90763110ebb3
-      m_Path: <Keyboard>/2
+      m_Id: 839c1f51-744f-45a2-bc04-8d60f9260bde
+      m_Path: <XRController>/secondaryButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Load Phase 2
-      m_Flags: 0
-    m_Flags: 0
-  loadPhase3:
-    m_Name: Load Phase 3
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 599be523-29a6-47fa-b2d1-e95fcea07c91
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: dd3b9c01-c1f2-4344-8fc0-4d081b52118f
-      m_Path: <Keyboard>/numpad3
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Load Phase 3
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 08a990aa-12b2-4043-8296-1f40d0695341
-      m_Path: <Keyboard>/3
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Load Phase 3
+      m_Action: Previous Phase
       m_Flags: 0
     m_Flags: 0
 --- !u!1 &3404883289588486198

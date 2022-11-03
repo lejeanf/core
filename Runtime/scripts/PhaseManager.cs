@@ -78,7 +78,7 @@ namespace jeanf.core
 
         void LoadPhase(int phaseId)
         {
-            Debug.Log($"listOfPhases.Count: {listOfPhases.Count}, phaseId: {phaseId}");
+            //Debug.Log($"listOfPhases.Count: {listOfPhases.Count}, phaseId: {phaseId}");
             Phase phase = listOfPhases[phaseId];
             currentPhase = phase;
             currentId = phase.id;
@@ -92,7 +92,7 @@ namespace jeanf.core
             if (listOfPhases.Count == 0) return;
             int index = currentId;
             LoadPhase((index + 1) % listOfPhases.Count);
-            Debug.Log($"currentIndex = {index}");
+            Debug.Log($"phase = {index}");
         }
 
         public void Previous() 
@@ -102,7 +102,7 @@ namespace jeanf.core
             int currentIndex = (index - 1) % listOfPhases.Count;
             if (currentIndex < 0) currentIndex = listOfPhases.Count - 1;
             LoadPhase(currentIndex);
-            Debug.Log($"currentIndex = {currentIndex}");
+            Debug.Log($"phase = {currentIndex}");
         }
     }
 }

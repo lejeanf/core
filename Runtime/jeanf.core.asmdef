@@ -2,9 +2,12 @@
     "name": "jeanf.core",
     "rootNamespace": "",
     "references": [
-        "GUID:4307f53044263cf4b835bd812fc161a4",
         "GUID:f06555f75b070af458a003d92f9efb00",
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:02f771204943f4a40949438e873e3eff",
+        "GUID:ba8c092d026123a418fb4bfb797a7bd8",
+        "GUID:dc04f38471c3a459fb4d31124ee9127d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
