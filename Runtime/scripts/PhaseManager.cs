@@ -37,8 +37,6 @@ namespace jeanf.core
         public InputAction nextPhase;
         public InputAction previousPhase;
 
-        public delegate void TeleportEvent(string sceneName);
-        public static event TeleportEvent teleport;
         private void Awake()
         {
             Subsribe();
@@ -51,29 +49,31 @@ namespace jeanf.core
 
         void Subsribe()
         {
+            nextPhase.Enable();
+            previousPhase.Enable();
+            nextPhase.performed += ctx => Next();
+            previousPhase.performed += ctx => Previous();
+
             foreach (Phase i in listOfPhases)
             {
                 i.inputAction.Enable();
                 i.inputAction.performed += ctx => LoadPhase(i.id);
             }
-            nextPhase.Enable();
-            previousPhase.Enable();
-            nextPhase.performed += ctx => Next();
-            previousPhase.performed += ctx => Previous();
         }
         private void OnDisable() => Unsubscribe();
         private void OnDestroy() => Unsubscribe();
         void Unsubscribe()
         {
+            nextPhase.performed -= ctx => Next();
+            previousPhase.performed -= ctx => Previous();
+            nextPhase.Disable();
+            previousPhase.Disable();
+
             foreach (Phase i in listOfPhases)
             {
                 i.inputAction.performed -= ctx => LoadPhase(i.id);
                 i.inputAction.Disable();
             }
-            nextPhase.performed -= ctx => Next();
-            previousPhase.performed -= ctx => Previous();
-            nextPhase.Disable();
-            previousPhase.Disable();
         }
 
         void LoadPhase(int phaseId)
@@ -84,16 +84,16 @@ namespace jeanf.core
             cameraManager.currentScene = phase.sceneToLoad;
 
             StartCoroutine(sceneLoader.LoadScene(phase.sceneToLoad, listOfPhases.Count, transitionManager));
-            teleport?.Invoke(phase.sceneToLoad);
         }
 
         public void Next()
         {
             if (listOfPhases.Count == 0) return;
-            int currentIndex =+ currentId;
-            if (currentIndex >= listOfPhases.Count) currentIndex = 0;
+            int currentIndex = currentId;
+            currentIndex = (currentId + 1) % (listOfPhases.Count);
+            if (currentIndex > listOfPhases.Count - 1 || currentIndex < 0) currentIndex = 0;
             LoadPhase(currentIndex);
-            //Debug.Log($"next: phase  = {currentIndex}");
+            Debug.Log($"next: phase  = {currentIndex}");
         }
 
         public void Previous() 
@@ -101,7 +101,7 @@ namespace jeanf.core
             if (listOfPhases.Count == 0) return;
             int currentIndex = (currentId + 1) % listOfPhases.Count;
             LoadPhase(currentIndex);
-            //Debug.Log($"previous: phase = {currentIndex}");
+            Debug.Log($"previous: phase = {currentIndex}");
         }
     }
 }

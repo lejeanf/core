@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1742455463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742455464}
+  - component: {fileID: 1742455465}
+  m_Layer: 0
+  m_Name: TeleportPlayerOnPhaseChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742455464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742455463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3404883289963149491}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1742455465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742455463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1903d46dd6a218349afe3d0773d35453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToTeleport: {fileID: 0}
+  teleportTargetPosition: {fileID: 0}
+  ignoreManualTeleportTargetPosition: 1
 --- !u!1 &3404883288004651617
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +286,7 @@ MonoBehaviour:
   cameraManager: {fileID: 3404883288960054187}
   listOfPhases:
   - sceneToLoad: Scene1
-    id: 1
+    id: 0
     transitionTime: 3
     inputAction:
       m_Name: Input
@@ -267,7 +314,7 @@ MonoBehaviour:
         m_Flags: 0
       m_Flags: 0
   - sceneToLoad: Scene2
-    id: 2
+    id: 1
     transitionTime: 3
     inputAction:
       m_Name: Input
@@ -295,7 +342,7 @@ MonoBehaviour:
         m_Flags: 0
       m_Flags: 0
   - sceneToLoad: Scene3
-    id: 3
+    id: 2
     transitionTime: 3
     inputAction:
       m_Name: Input
@@ -339,7 +386,7 @@ MonoBehaviour:
       m_Action: Next Phase
       m_Flags: 0
     - m_Name: 
-      m_Id: b1c2cbd4-612d-4116-a322-55b3f1187110
+      m_Id: 89e3684c-36c8-439a-a461-0045205124ae
       m_Path: <XRController>/primaryButton
       m_Interactions: 
       m_Processors: 
@@ -364,7 +411,7 @@ MonoBehaviour:
       m_Action: Previous Phase
       m_Flags: 0
     - m_Name: 
-      m_Id: 839c1f51-744f-45a2-bc04-8d60f9260bde
+      m_Id: eaa50578-18c0-4978-b43d-a77a7c22f1a4
       m_Path: <XRController>/secondaryButton
       m_Interactions: 
       m_Processors: 
@@ -557,6 +604,7 @@ Transform:
   - {fileID: 3404883288960054186}
   - {fileID: 3404883288004651618}
   - {fileID: 3404883289767885664}
+  - {fileID: 1742455464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
