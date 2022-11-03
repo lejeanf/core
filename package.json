@@ -4,8 +4,12 @@
   "displayName":"Jeanf-Toolkit Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "author":{
-    "Jean-François Robin",
+    "name":"Jean-François Robin",
     "email":"robin.jeanfrancois@gmail.com",
     "url":"https://jeanfrancoisrobin.art"
     }
+  "depedencies":{
+    "com.unity.cinemachine": "2.8.9",
+    "com.unity.inputsystem": "1.3.0"
+  }
 }
