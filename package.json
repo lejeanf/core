@@ -14,7 +14,7 @@
     "email":"robin.jeanfrancois@gmail.com",
     "url":"https://jeanfrancoisrobin.art"
   },
-  "depedencies": {
+  "dependencies": {
     "com.unity.cinemachine": "2.0.0",
     "com.unity.inputsystem": "1.0.0",
     "com.unity.timeline": "1.0.0"
