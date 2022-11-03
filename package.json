@@ -6,7 +6,8 @@
   "unity": "2020.3",
   "depedencies": {
     "com.unity.cinemachine": "2.0.0",
-    "com.unity.inputsystem": "1.0.0"
+    "com.unity.inputsystem": "1.0.0",
+    "com.unity.timeline": "1.0.0",
   },
   "keywords": [
     "core",
