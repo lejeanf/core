@@ -7,3 +7,10 @@ Instructions:
 You can also set the inputs there to trigger each scene indivudualy using the keyboard for instance
 5 - Add a "gameObject" to each scene and include the script: Send
 6 - Enjoy!
+
+
+to add this package in package manage:
+- add new scopedRegisteries in ProjectSettings/Package manager
+- name: jeanf
+- url: https://registry.npmjs.com
+- scope jfr.art
