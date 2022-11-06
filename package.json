@@ -1,5 +1,5 @@
 {
-  "name":"coreV2.jeanfrancoisrobin.unitypackage",
+  "name":"corev2.jeanfrancoisrobin.unitypackage",
   "version":"0.0.1",
   "displayName":"Core2",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
