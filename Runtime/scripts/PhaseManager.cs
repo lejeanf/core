@@ -33,7 +33,6 @@ namespace jeanf.core
         public CameraManager cameraManager;
 
         List<Phase> listOfPhases = new List<Phase>();
-        List<string> scenesInBuild = new List<string>();
         List<InputAction> listOfInputAction = new List<InputAction>();
         [SerializeField] List<string> scenesToIgnore = new List<string>();
 
@@ -111,7 +110,6 @@ namespace jeanf.core
 
         public static String removeWord(String str, String word)
         {
-
             // Check if the word is present in string
             // If found, remove it using removeAll()
             if (str.Contains(word))
@@ -135,8 +133,7 @@ namespace jeanf.core
             return str;
         }
         void FindAllScenesExcept(List<string> scenesToIgnore) {
-            scenesInBuild.Clear();
-            scenesInBuild.TrimExcess();
+            List<string> scenesInBuild = new List<string>();
 
             int sceneCount = SceneManager.sceneCountInBuildSettings;
             Debug.Log("sceneCount: " + sceneCount);
