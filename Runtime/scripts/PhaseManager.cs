@@ -106,8 +106,8 @@ namespace jeanf.core
             List<string> scenesInBuild = new List<string>();
             int sceneCount = SceneManager.sceneCountInBuildSettings;
             Debug.Log("sceneCount: " + sceneCount);
-            string path = SceneManager.GetSceneByBuildIndex(0).path.Replace("persistent.unity", "");
-            Debug.Log("path: " + path);
+            string path = SceneManager.GetSceneByBuildIndex(0).path != "" ? SceneManager.GetSceneByBuildIndex(0).path.Replace("persistent.unity", ""): "";
+            if(path != null) Debug.Log("path: " + path);
             for (int i = 0; i < sceneCount; i++)
             {
                 string scene = SceneUtility.GetScenePathByBuildIndex(i);
