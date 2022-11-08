@@ -91,7 +91,6 @@ namespace jeanf.core
             currentIndex = (currentId + 1) % (listOfPhases.Count);
             if (currentIndex > listOfPhases.Count - 1 || currentIndex < 0) currentIndex = 0;
             LoadPhase(currentIndex);
-            Debug.Log($"next: phase  = {currentIndex}");
         }
 
         public void Previous() 
@@ -99,7 +98,6 @@ namespace jeanf.core
             if (listOfPhases.Count == 0) return;
             int currentIndex = (currentId + 1) % listOfPhases.Count;
             LoadPhase(currentIndex);
-            Debug.Log($"previous: phase = {currentIndex}");
         }
 
         void FindAllScenesExcept(List<string> scenesToIgnore) {
@@ -117,11 +115,9 @@ namespace jeanf.core
                 if (!scenesInBuild.Contains(scene) && scene != "" && scene != "persistent" && !scenesToIgnore.Contains(scene))
                 {
                     scenesInBuild.Add(scene);
-                    Debug.Log($"adding {scene} to phases");
                 }
             }
 
-            List<InputAction> listOfInputAction = new List<InputAction>();
             int id = 0;
             foreach (string s in scenesInBuild)
             {
@@ -131,9 +127,8 @@ namespace jeanf.core
                     inputAction.AddBinding($"<Keyboard>/{id + 1}");
                     inputAction.AddBinding($"<Keyboard>/numpad{id + 1}");
                 }
-                listOfInputAction.Add(inputAction);
 
-                listOfPhases.Add(new Phase(s, 0, listOfInputAction[id], id));
+                listOfPhases.Add(new Phase(s, 0, inputAction, id));
                 id++;
             }
         }
