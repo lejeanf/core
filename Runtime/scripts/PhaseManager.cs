@@ -74,7 +74,7 @@ namespace jeanf.core
             }
         }
 
-        void LoadPhase(int phaseId)
+        public void LoadPhase(int phaseId)
         {
             Phase phase = listOfPhases[phaseId];
             currentPhase = phase;
