@@ -42,11 +42,6 @@ namespace jeanf.core
         {
             FindAllScenesExcept(scenesToIgnore);
             Subsribe();
-
-            //sceneLoader = this.gameObject.AddComponent<SceneLoader>();
-            //transitionManager = this.gameObject.AddComponent<TransitionManager>();
-            currentPhase = listOfPhases[0];
-            cameraManager.currentScene = currentPhase.sceneToLoad;
             LoadPhase(0);
         }
 
@@ -107,44 +102,22 @@ namespace jeanf.core
             Debug.Log($"previous: phase = {currentIndex}");
         }
 
-        public static String removeWord(String str, String word)
-        {
-            // Check if the word is present in string
-            // If found, remove it using removeAll()
-            if (str.Contains(word))
-            {
-                Debug.Log($"word {word} found");
-                // To cover the case
-                // if the word is at the
-                // beginning of the string
-                // or anywhere in the middle
-                String tempWord = word + " ";
-                str = str.Replace(tempWord, "");
-
-                // To cover the edge case
-                // if the word is at the
-                // end of the string
-                tempWord = " " + word;
-                str = str.Replace(tempWord, "");
-            }
-
-            // Return the resultant string
-            return str;
-        }
         void FindAllScenesExcept(List<string> scenesToIgnore) {
             List<string> scenesInBuild = new List<string>();
-
             int sceneCount = SceneManager.sceneCountInBuildSettings;
             Debug.Log("sceneCount: " + sceneCount);
-            string path = SceneManager.GetSceneByBuildIndex(0).path;
-            if(path.Contains("persistent.unity")) path = path.Replace("persistent.unity", "");
-            if(path != null) Debug.Log("path: " + path);
+            string path = SceneManager.GetSceneByBuildIndex(0).path.Replace("persistent.unity", "");
+            Debug.Log("path: " + path);
             for (int i = 0; i < sceneCount; i++)
             {
                 string scene = SceneUtility.GetScenePathByBuildIndex(i);
                 scene = scene.Replace(path, "").Replace(".unity", "");
                 if (scene.Contains("/")) scene = scene.Split("/")[1];
-                if (!scenesInBuild.Contains(scene) && scene != "" && scene != "persistent" && !scenesToIgnore.Contains(scene)) scenesInBuild.Add(scene);
+                if (!scenesInBuild.Contains(scene) && scene != "" && scene != "persistent" && !scenesToIgnore.Contains(scene))
+                {
+                    scenesInBuild.Add(scene);
+                    Debug.Log($"adding {scene} to phases");
+                }
             }
 
             List<InputAction> listOfInputAction = new List<InputAction>();
