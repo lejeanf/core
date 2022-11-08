@@ -1,6 +1,6 @@
 {
   "name":"core.jeanfrancoisrobin.unitypackage",
-  "version":"0.1.3",
+  "version":"0.1.4",
   "displayName":"Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "unity": "2020.3",

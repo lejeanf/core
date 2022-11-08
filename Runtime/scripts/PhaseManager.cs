@@ -33,7 +33,6 @@ namespace jeanf.core
         public CameraManager cameraManager;
 
         List<Phase> listOfPhases = new List<Phase>();
-        List<InputAction> listOfInputAction = new List<InputAction>();
         [SerializeField] List<string> scenesToIgnore = new List<string>();
 
         public InputAction nextPhase;
@@ -139,7 +138,7 @@ namespace jeanf.core
             Debug.Log("sceneCount: " + sceneCount);
             string path = SceneManager.GetSceneByBuildIndex(0).path;
             if(path.Contains("persistent.unity")) path = path.Replace("persistent.unity", "");
-            Debug.Log("path: " + path);
+            if(path != null) Debug.Log("path: " + path);
             for (int i = 0; i < sceneCount; i++)
             {
                 string scene = SceneUtility.GetScenePathByBuildIndex(i);
@@ -148,6 +147,7 @@ namespace jeanf.core
                 if (!scenesInBuild.Contains(scene) && scene != "" && scene != "persistent" && !scenesToIgnore.Contains(scene)) scenesInBuild.Add(scene);
             }
 
+            List<InputAction> listOfInputAction = new List<InputAction>();
             int id = 0;
             foreach (string s in scenesInBuild)
             {
