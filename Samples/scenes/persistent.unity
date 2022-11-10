@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - component: {fileID: 738493117}
   - component: {fileID: 738493116}
-  - component: {fileID: 738493115}
   - component: {fileID: 738493118}
   m_Layer: 0
   m_Name: Sun
@@ -225,18 +224,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &738493115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738493114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &738493116
 Light:
   m_ObjectHideFlags: 0
@@ -710,11 +697,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182965666}
     m_Modifications:
-    - target: {fileID: 934581913077452310, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5952935535805194021, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
         type: 3}
       propertyPath: m_RootOrder
@@ -774,16 +756,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952935535805194022, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6441756765926986772, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee3cf29c780fb545beee43cd1ac23bf, type: 3}
