@@ -33,8 +33,8 @@ namespace jeanf.core
                 initScene?.Invoke(sceneToLoad);
 
                 yield return new WaitUntil(() => loadingOperation.isDone); 
-                SceneManager.SetActiveScene(scene);
                 loadedScenes.Add(sceneToLoad);
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
                 if (loadedScenes.Count > 1) UnloadAllExept(sceneToLoad, phaseCount);
 
