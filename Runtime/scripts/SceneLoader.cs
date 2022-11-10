@@ -32,7 +32,8 @@ namespace jeanf.core
                 var loadingOperation = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
                 initScene?.Invoke(sceneToLoad);
 
-                yield return new WaitUntil(() => loadingOperation.isDone);
+                yield return new WaitUntil(() => loadingOperation.isDone); 
+                SceneManager.SetActiveScene(scene);
                 loadedScenes.Add(sceneToLoad);
 
                 if (loadedScenes.Count > 1) UnloadAllExept(sceneToLoad, phaseCount);
