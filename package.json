@@ -1,5 +1,5 @@
 {
-  "name":"jeanfrancoisrobin.art.core2",
+  "name":"@jeanfrancoisrobin.art/core",
   "version":"0.0.1",
   "displayName":"Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
