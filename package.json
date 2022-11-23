@@ -1,7 +1,7 @@
 {
-  "name":"jeanfrancoisrobin.art.core2",
+  "name":"jeanfrancoisrobin.art.core3",
   "version":"0.0.1",
-  "displayName":"Core2",
+  "displayName":"Core3",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "unity": "2020.3",
   "keywords": [
