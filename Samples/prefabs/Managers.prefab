@@ -1,5 +1,139 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &77107922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 77107923}
+  - component: {fileID: 77107924}
+  m_Layer: 0
+  m_Name: RestartGameWhenHmdIsRemoved
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &77107923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77107922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3404883289963149491}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &77107924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77107922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69dde743a670ee42bc22ecb78bb86e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hmdLastStatus: 0
+  cancelTime: 15
+  cancelCanvas: {fileID: 0}
+  cancelButton:
+    m_Name: Cancel Button
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 89ed67d8-9258-4c21-be0d-cfc6c3b00687
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 221e9afb-72ae-4f0d-a316-3b64153d947b
+      m_Path: <Keyboard>/anyKey
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cancel Button
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 54eaf7be-bb54-42a5-89e9-6a4b02f574a7
+      m_Path: <ValveIndexController>{LeftHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cancel Button
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 217a9a1b-4e46-4b45-9f0d-2d8747e7d327
+      m_Path: <ValveIndexController>{RightHand}/trigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Cancel Button
+      m_Flags: 0
+    m_Flags: 0
+--- !u!1 &524565261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 524565262}
+  - component: {fileID: 524565263}
+  m_Layer: 0
+  m_Name: BroadcastHmdStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &524565262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524565261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3404883289963149491}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &524565263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524565261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406af79300341ef4580c8d7845e7c6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hands:
+  - {fileID: 0}
+  - {fileID: 0}
+  leftRay: {fileID: 0}
+  leftRayLineRenderer: {fileID: 0}
+  rightRay: {fileID: 0}
+  rightRayLineRenderer: {fileID: 0}
+  _isHmdActive: 0
+  _playerPosition: {fileID: 0}
+  _trackerOffset: {fileID: 0}
 --- !u!1 &1742455463
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,8 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToTeleport: {fileID: 0}
-  teleportTargetPosition: {fileID: 0}
-  ignoreManualTeleportTargetPosition: 1
+  inputActionAsset: {fileID: 0}
 --- !u!1 &3404883288004651617
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,91 +417,7 @@ MonoBehaviour:
   sceneLoader: {fileID: 3404883288004651619}
   transitionManager: {fileID: 3404883289767885665}
   cameraManager: {fileID: 3404883288960054187}
-  listOfPhases:
-  - sceneToLoad: Scene1
-    id: 0
-    transitionTime: 3
-    inputAction:
-      m_Name: Input
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: a0531fbf-d407-45f4-bced-7973b5d3ac98
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: d6a2e1cf-eadd-4451-8495-b68f348e4236
-        m_Path: <Keyboard>/1
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      - m_Name: 
-        m_Id: d6df24c3-2ade-4d59-a91c-9873af452cc3
-        m_Path: <Keyboard>/numpad1
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      m_Flags: 0
-  - sceneToLoad: Scene2
-    id: 1
-    transitionTime: 3
-    inputAction:
-      m_Name: Input
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 628cd73c-097c-494c-908c-416fd25c5ab8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: b29d684c-a266-4962-8c65-0425c6137c55
-        m_Path: <Keyboard>/2
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      - m_Name: 
-        m_Id: 394e71e5-59b5-49cc-862e-bfdd61973625
-        m_Path: <Keyboard>/numpad2
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      m_Flags: 0
-  - sceneToLoad: Scene3
-    id: 2
-    transitionTime: 3
-    inputAction:
-      m_Name: Input
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 7668ed94-c13c-41df-bdca-e2a63acc6aa8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 208c8d0b-892a-428b-8e2f-53ba073295d9
-        m_Path: <Keyboard>/3
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      - m_Name: 
-        m_Id: 1595ec4b-fd55-49ec-9d2c-90dcf208f226
-        m_Path: <Keyboard>/numpad3
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Input
-        m_Flags: 0
-      m_Flags: 0
+  scenesToIgnore: []
   nextPhase:
     m_Name: Next Phase
     m_Type: 0
@@ -605,6 +654,8 @@ Transform:
   - {fileID: 3404883288004651618}
   - {fileID: 3404883289767885664}
   - {fileID: 1742455464}
+  - {fileID: 524565262}
+  - {fileID: 77107923}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

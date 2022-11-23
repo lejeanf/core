@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 namespace jeanf.core{
     public class TeleportOnEvent : MonoBehaviour
     {
         public GameObject objectToTeleport;
-        public GameObject manualTeleportTargetPosition;
-        public bool ignoreManualTeleportTargetPosition = true;
+
         private void OnEnable()
         {
             SendTeleportTarget.teleportPlayer += ctx => Teleport(ctx);
@@ -22,15 +23,10 @@ namespace jeanf.core{
 
         public void Teleport(Transform teleportTarget)
         {
-            Transform chosenTarget = null;
-            if (ignoreManualTeleportTargetPosition)
-            {
-                chosenTarget = teleportTarget;
-            }
-            else
-            {
-                chosenTarget = manualTeleportTargetPosition.transform;
-            }
+            if (!teleportTarget) return;
+            Transform chosenTarget = teleportTarget;
+            if (!objectToTeleport) return;
+
             objectToTeleport.transform.position = chosenTarget.position;
             objectToTeleport.transform.rotation = chosenTarget.rotation;
         }

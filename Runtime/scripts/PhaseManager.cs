@@ -37,6 +37,9 @@ namespace jeanf.core
 
         public InputAction nextPhase;
         public InputAction previousPhase;
+
+        public delegate void HideUI();
+        public static HideUI hideUIevent;
             
         private void Awake()
         {
@@ -76,6 +79,7 @@ namespace jeanf.core
 
         public void LoadPhase(int phaseId)
         {
+            hideUIevent?.Invoke();
             Phase phase = listOfPhases[phaseId];
             currentPhase = phase;
             currentId = phase.id;
