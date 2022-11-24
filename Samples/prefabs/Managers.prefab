@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69dde743a670ee42bc22ecb78bb86e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseManager: {fileID: 3404883289483565093}
   hmdLastStatus: 0
   cancelTime: 15
   cancelCanvas: {fileID: 0}
+  restartCanvas: {fileID: 0}
   cancelButton:
     m_Name: Cancel Button
     m_Type: 0
@@ -57,7 +59,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 221e9afb-72ae-4f0d-a316-3b64153d947b
-      m_Path: <Keyboard>/anyKey
+      m_Path: <Keyboard>/c
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -78,6 +80,31 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Cancel Button
+      m_Flags: 0
+    m_Flags: 0
+  restartButton:
+    m_Name: Restart Button
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2e23007a-18b3-44e9-8f8a-84c684e3829a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5601797d-c61d-445f-bb79-1526d9542b1c
+      m_Path: '*/{PrimaryButton}'
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Restart Button
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 141632be-649a-4f32-9c97-0cceaaa5d7c6
+      m_Path: <Keyboard>/t
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Restart Button
       m_Flags: 0
     m_Flags: 0
 --- !u!1 &524565261
@@ -484,14 +511,6 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Next Phase
       m_Flags: 0
-    - m_Name: 
-      m_Id: 89e3684c-36c8-439a-a461-0045205124ae
-      m_Path: <XRController>/primaryButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Next Phase
-      m_Flags: 0
     m_Flags: 0
   previousPhase:
     m_Name: Previous Phase
@@ -504,14 +523,6 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 81632ec6-638c-4e94-991d-772029a3ba58
       m_Path: <Keyboard>/b
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Previous Phase
-      m_Flags: 0
-    - m_Name: 
-      m_Id: eaa50578-18c0-4978-b43d-a77a7c22f1a4
-      m_Path: <XRController>/secondaryButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 

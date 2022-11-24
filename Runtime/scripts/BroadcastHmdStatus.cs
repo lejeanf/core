@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class BroadcastHmdStatus : MonoBehaviour
 {
@@ -24,24 +25,27 @@ public class BroadcastHmdStatus : MonoBehaviour
     [SerializeField] private GameObject _playerPosition;
     [SerializeField] private GameObject _trackerOffset;
 
+
     private void Awake()
     {
-        _isHmdActive = false;
+        _isHmdActive = XRDevice.IsHMDMounted();
         foreach (GameObject g in hands)
         {
             g.SetActive(false);
         }
         setHMD();
     }
+
     private void FixedUpdate()
     {
-        if (_isHmdActive == isHmdPresent) return;
+        if (_isHmdActive == XRDevice.IsHMDMounted()) return;
         setHMD();
     }
-
+    /*
     void setHMD() 
     {
         Vector3 _playerPos = _playerPosition.transform.position;
+        isHmdPresent = userPresense.action.ReadValue<bool>();
 
         if (!isHmdPresent) // si pas de casque
         {
@@ -73,8 +77,44 @@ public class BroadcastHmdStatus : MonoBehaviour
         _isHmdActive = isHmdPresent;
 
         hmdStatus?.Invoke(isHmdPresent);
-    }
+    }*/
+    void setHMD()
+    {
+        Vector3 _playerPos = _playerPosition.transform.position;
+        bool _isHmdPresent = XRDevice.IsHMDMounted();
 
+        if (!_isHmdPresent) // si pas de casque
+        {
+            _lastHmdState = true;
+            if (isHandsVisible)
+            {
+                foreach (GameObject g in hands)
+                {
+                    g.SetActive(false);
+                }
+                isHandsVisible = false;
+                leftRay.enabled = rightRay.enabled = leftRayLineRenderer.enabled = rightRayLineRenderer.enabled = false;
+            }
+        }
+        else
+        {
+            _lastHmdState = false;
+            if (!isHandsVisible)
+            {
+                foreach (GameObject g in hands)
+                {
+                    g.SetActive(true);
+                }
+                isHandsVisible = true;
+                leftRay.enabled = rightRay.enabled = leftRayLineRenderer.enabled = rightRayLineRenderer.enabled = true;
+            }
+        }
+
+        _isHmdActive = _isHmdPresent;
+
+        hmdStatus?.Invoke(_isHmdPresent);
+    }
+    /*
     public static bool isHmdPresent
     {
         get
@@ -95,5 +135,5 @@ public class BroadcastHmdStatus : MonoBehaviour
         {
             _isHmdPresent = value;
         }
-    }
+    }*/
 }

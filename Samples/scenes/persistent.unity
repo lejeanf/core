@@ -339,6 +339,12 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 8621236058911702523}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1370920950 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1370920950, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8621236058911702523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464622820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6385685539271848307, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
@@ -517,6 +523,10 @@ PrefabInstance:
       propertyPath: cancelCanvas
       value: 
       objectReference: {fileID: 954019255}
+    - target: {fileID: 77107924, guid: 2c9fd5634d457c649ade923b56c736ab, type: 3}
+      propertyPath: restartCanvas
+      value: 
+      objectReference: {fileID: 1370920950}
     - target: {fileID: 524565263, guid: 2c9fd5634d457c649ade923b56c736ab, type: 3}
       propertyPath: leftRay
       value: 
@@ -691,6 +701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 182965666}
     m_Modifications:
+    - target: {fileID: 567126086, guid: 7ee3cf29c780fb545beee43cd1ac23bf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 77107924}
     - target: {fileID: 5952935535805194021, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
         type: 3}
       propertyPath: m_RootOrder

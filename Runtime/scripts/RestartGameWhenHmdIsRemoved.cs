@@ -10,22 +10,28 @@ namespace jeanf.core
 {
     public class RestartGameWhenHmdIsRemoved : MonoBehaviour
     {
+        public PhaseManager phaseManager;
         public bool hmdLastStatus = true;
 
         public float cancelTime = 6f;
 
         public Canvas cancelCanvas;
+        public Canvas restartCanvas;
 
         public InputAction cancelButton;
+        public InputAction restartButton;
 
         private void OnEnable()
         {
+            restartCanvas.gameObject.SetActive(false);
             PhaseManager.hideUIevent += HideUI;
             hmdLastStatus = true;
             cancelCanvas.gameObject.SetActive(false);
             BroadcastHmdStatus.hmdStatus += ResetGame;
             cancelButton.Enable();
             cancelButton.performed += ctx => CancelReset();
+            restartButton.Enable();
+            restartButton.performed += ctx => ChangeRestartUIState();
         }
         private void OnDisable() => Unsubscribe();
         private void OnDestroy() => Unsubscribe();
@@ -34,6 +40,8 @@ namespace jeanf.core
             PhaseManager.hideUIevent -= HideUI;
             cancelButton.performed -= ctx => CancelReset();
             cancelButton.Disable();
+            restartButton.performed -= ctx => ChangeRestartUIState();
+            restartButton.Disable();
             BroadcastHmdStatus.hmdStatus -= ResetGame;
         }
 
@@ -42,7 +50,7 @@ namespace jeanf.core
             if (state && !hmdLastStatus)
             {
                 cancelCanvas.gameObject.SetActive(true);
-                FunctionTimer.Create(Reset, cancelTime, "resetTimer");
+                FunctionTimer.Create(ResetExperience, cancelTime, "resetTimer");
                 hmdLastStatus = state;
             }
 
@@ -59,6 +67,16 @@ namespace jeanf.core
         private void Reset()
         {
             SceneManager.LoadScene(SceneManager.GetSceneByBuildIndex(0).name);
+        }
+
+        public void ResetExperience() 
+        {
+            phaseManager.LoadPhase(0);
+        }
+
+        void ChangeRestartUIState() 
+        {
+            restartCanvas.gameObject.SetActive(!restartCanvas.gameObject.activeSelf);
         }
 
         void HideUI() 
