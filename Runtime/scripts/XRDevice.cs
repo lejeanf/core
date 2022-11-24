@@ -39,15 +39,16 @@ public class XRDevice
         {
             return false;
         }
-        /*
-        InputDevice headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
-        if (headDevice.isValid == false) return false;
-        bool userPresent = false;
-        bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
-
-        Debug.Log(headDevice.isValid + " ** " + presenceFeatureSupported + " ** " + userPresent);
-
-        return userPresent;
-        */
     }
 }
+
+/*
+InputDevice headDevice = InputDevices.GetDeviceAtXRNode(XRNode.Head);
+if (headDevice.isValid == false) return false;
+bool userPresent = false;
+bool presenceFeatureSupported = headDevice.TryGetFeatureValue(CommonUsages.userPresence, out userPresent);
+
+Debug.Log(headDevice.isValid + " ** " + presenceFeatureSupported + " ** " + userPresent);
+
+return userPresent;
+*/
