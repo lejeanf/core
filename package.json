@@ -1,13 +1,14 @@
 {
-  "name":"jeanfrancoisrobin.art.core4",
-  "version":"0.0.1",
-  "displayName":"Core4",
+  "name":"core.jeanfrancoisrobin.unitypackage",
+  "version":"0.2.7",
+  "displayName":"Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "unity": "2020.3",
   "keywords": [
     "core",
     "jeanf",
-    "toolkit"
+    "toolkit",
+    "vr"
   ],
   "author":{
     "name":"Jean-François Robin",
@@ -21,12 +22,13 @@
     "com.unity.feature.vr": "1.0.0",
     "com.unity.xr.oculus": "3.0.2",
     "com.unity.xr.openxr": "1.4.2",
-    "com.unity.xr.interaction.toolkit": "2.2.0"
+    "com.unity.xr.interaction.toolkit": "2.2.0",
+    "com.unity.textmeshpro": "3.0.6"
   },
   "samples": [
         {
-            "displayName": "Basic setup",
-            "description": "Contains example scenes, prefabs and setting files",
+            "displayName": "Core setup for vr projects",
+            "description": "Contains example scenes, prefabs and setting files in the package sample files",
             "path": "Samples/"
         }
     ]
