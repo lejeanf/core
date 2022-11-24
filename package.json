@@ -1,6 +1,6 @@
 {
   "name":"core.jeanfrancoisrobin.unitypackage",
-  "version":"0.2.8",
+  "version":"0.2.9",
   "displayName":"Core",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
   "unity": "2020.3",
@@ -27,7 +27,7 @@
   },
   "samples": [
         {
-            "displayName": "Core setup for vr projects",
+            "displayName": "Core samples",
             "description": "Contains example scenes, prefabs and setting files in the package sample files",
             "path": "Samples/"
         }

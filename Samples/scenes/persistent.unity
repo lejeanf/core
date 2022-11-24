@@ -339,6 +339,12 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 8621236058911702523}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1464622820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6385685539271848307, guid: 7ee3cf29c780fb545beee43cd1ac23bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8621236058911702523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584140251
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +549,10 @@ PrefabInstance:
       propertyPath: rightRayLineRenderer
       value: 
       objectReference: {fileID: 5952935535060938965}
+    - target: {fileID: 1430974412, guid: 2c9fd5634d457c649ade923b56c736ab, type: 3}
+      propertyPath: cameraForward
+      value: 
+      objectReference: {fileID: 1464622820}
     - target: {fileID: 1742455465, guid: 2c9fd5634d457c649ade923b56c736ab, type: 3}
       propertyPath: objectToTeleport
       value: 
