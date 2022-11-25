@@ -1,5 +1,5 @@
 {
-  "name":"art.jeanf.test",
+  "name":"fr.jeanf.test",
   "version":"0.0.1",
   "displayName":"Test",
   "description":"This package contains a basic scene loader as well as some basic scripts to trigger events as to make a project more interactive",
