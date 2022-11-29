@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 namespace jeanf.core{
     public class CameraManager : MonoBehaviour
     {
-        [SerializeField] private List<CinemachineVirtualCamera> _virtualCameras = new();
+        [HideInInspector] public List<CinemachineVirtualCamera> _virtualCameras = new();
         CinemachineBrain brain;
         public bool autoSetEndTime;
         //Only used if autoSetEndTime is false
@@ -20,6 +20,7 @@ namespace jeanf.core{
 
         public delegate void GetVirtualCameras(List<CinemachineVirtualCamera> virtualCameras, string sceneToSearch);
         public static event GetVirtualCameras getVirtualCameras;
+        public bool isDebug = false;
 
         public string currentScene;
 
@@ -71,12 +72,12 @@ namespace jeanf.core{
 
         public void MoveToCam(int camIndex)
         {
-            //Debug.Log($"Moving to cam {camIndex}");
             for (int i = 0; i < _virtualCameras.Count; i++)
             {
                 if (!_virtualCameras[i]) return;
                 _virtualCameras[i].enabled = (i == camIndex);
             }
+            if (isDebug) Debug.Log($"Moving to cam {camIndex}");
         }
 
         public int getCurrentCamIndex()
